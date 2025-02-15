@@ -1,0 +1,64 @@
+// Função para alternar o menu de navegação
+function toggleMenu(e) {
+  // Impede que o clique no ícone propague e feche o menu imediatamente
+  e.stopPropagation();
+  const navMenu = document.getElementById('nav-menu');
+  if (navMenu.style.left === "0px") {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+function openMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  navMenu.style.left = "0px";
+  // Adiciona ouvinte para cliques fora do menu
+  document.addEventListener('click', closeMenuOnClickOutside);
+}
+
+function closeMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  if (window.innerWidth >= 768) {
+    navMenu.style.left = "-30%";
+  } else {
+    navMenu.style.left = "-75%";
+  }
+  document.removeEventListener('click', closeMenuOnClickOutside);
+}
+
+function closeMenuOnClickOutside(e) {
+  const navMenu = document.getElementById('nav-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  if (!navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+    closeMenu();
+  }
+}
+
+// Função para simular a abertura da barra de pesquisa
+function openSearch() {
+  alert("Abrir barra de pesquisa.");
+}
+
+// Função para mudar o idioma
+function changeLanguage() {
+  const languages = ['Português', 'English', 'Español', 'Français', '日本語'];
+  const choice = prompt("Escolha o idioma:\n1 - Português\n2 - English\n3 - Español\n4 - Français\n5 - 日本語");
+  const index = parseInt(choice) - 1;
+  if (index >= 0 && index < languages.length) {
+    alert("Idioma alterado para " + languages[index]);
+    // Aqui você pode implementar a troca dos textos na página conforme o idioma selecionado.
+  } else {
+    alert("Opção inválida!");
+  }
+}
+
+// Função para alternar o modo Desktop/Móvel
+function toggleMode() {
+  document.body.classList.toggle('mobile-mode');
+  if (document.body.classList.contains('mobile-mode')) {
+    alert("Modo Desktop ativado.");
+  } else {
+    alert("Modo Móvel ativado.");
+  }
+}

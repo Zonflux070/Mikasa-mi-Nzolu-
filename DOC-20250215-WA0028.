@@ -1,0 +1,197 @@
+/* Reset básico e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;       /* Preto (40%) */
+  color: #000;               /* Dourado (10%) para textos */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.menu-icon {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #00C2FF;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+h1, h2, h3 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0000FF;    /* Vermelho (40%) */
+  padding: 10px 20px;
+}
+
+header .icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #FFF;
+}
+
+header .logo {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #00C2FF;
+  border-radius: 30%;
+}
+
+/* Menu de Navegação */
+#nav-menu {
+  position: fixed;
+  top: 0;
+  left: -75%;
+  width: 75%;
+  height: 100%;
+  background-color: #3D8BE561;    /* Verde (10%) */
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  #nav-menu {
+    width: 30%;
+    left: -30%;
+  }
+}
+
+#nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-menu ul li {
+  padding: 15px;
+}
+
+#nav-menu ul li a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Conteúdo Principal */
+main {
+  padding: 0px;
+}
+
+/* Seção 1: Título */
+#secao1 {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #FFF;
+}
+
+/* Seção 2: Subtítulo, Imagem e Texto */
+#secao2 {
+  background-color: #E5E9F1;  /* Fundo diferenciado */
+  padding: 0px;
+  margin: 0px;
+  overflow: auto;
+}
+
+#secao2 .conteudo-sec2 h2 {
+  text-align: left;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+#secao2 .imagem-esquerda {
+  float: left;
+  margin-right: 20px;
+}
+
+#secao2 .imagem-esquerda img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;   /* Cantos arredondados */
+}
+
+#secao2 p {
+  text-align: justify;
+  color: #000;
+}
+#secao2 a {
+  color: #000;
+}
+
+/* Seção 3: Links, Botão de Idioma e Link em Barra */
+#secao3 {
+  background-color: #FFF;  /* Fundo diferenciado */
+  padding: 0px;
+  margin: 0px;
+}
+
+#secao3 .links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  background-color: #E5E9F1;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#secao3 button#btn-idioma {
+  display: block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #0000FF;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#secao3 .barra-link a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3D8BE561;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  margin: 0;
+}
+
+/* Rodapé */
+footer {
+  background-color: #0000FF;
+  padding: 0px;
+  color: #FFF;
+  text-align: center;
+  font-family: monospace;
+}
+
+footer .footer-sec1 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+footer .footer-sec2 a {
+  color: #FFF;
+  margin-right: 20px;
+}
+
+footer .footer-sec2 a#toggle-mode {
+  cursor: pointer;
+}
+
+/* Exemplo de estilo para modo móvel (toggle via JavaScript) */
+body.mobile-mode {
+  /* Ajustes para simular um modo móvel – adicione regras conforme necessário */
+  font-size: 6px;
+}
